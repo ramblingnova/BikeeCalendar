@@ -6,7 +6,7 @@
     android:background="@drawable/filtering_contentsbox"
     android:paddingBottom="26dp"
     android:paddingTop="24dp"
-    tools:context=".AnimatedCalendarActivity">
+    tools:context=".other.AnimatedCalendarActivity">
 
     <ImageView
         android:id="@+id/calendar_icon_image_view"

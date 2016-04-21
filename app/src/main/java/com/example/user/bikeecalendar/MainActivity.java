@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.user.bikeecalendar.customcalendar.CustomCalendarActivity;
+import com.example.user.bikeecalendar.filter.FilterActivity;
+import com.example.user.bikeecalendar.other.AnimatedCalendarActivity;
+import com.example.user.bikeecalendar.other.PopupCalendarDialogFragment;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show(getSupportFragmentManager(), "TAG");
                 break;
             case R.id.activity_main_custom_calendar_button:
-                intent = new Intent(this, CustomCalendarActivity.class);
+                intent = new Intent(this, FilterActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -1,4 +1,4 @@
-package com.example.user.bikeecalendar;
+package com.example.user.bikeecalendar.other;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.example.user.bikeecalendar.R;
 import com.squareup.timessquare.CalendarPickerView;
 
 import java.util.Calendar;

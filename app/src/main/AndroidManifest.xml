@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AnimatedCalendarActivity" />
-        <activity android:name=".customcalendar.CustomCalendarActivity"></activity>
+        <activity android:name=".other.AnimatedCalendarActivity" />
+        <activity android:name=".filter.FilterActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.user.bikeecalendar.customcalendar.pager;
+package com.example.user.bikeecalendar.filter.calendar;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -11,10 +11,9 @@ import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.example.user.bikeecalendar.R;
-import com.example.user.bikeecalendar.customcalendar.pager.recycler.CalendarAdapter;
-import com.example.user.bikeecalendar.customcalendar.pager.recycler.CalendarItem;
-import com.example.user.bikeecalendar.customcalendar.pager.recycler.OnCalendarAdapterClickListener;
-import com.example.user.bikeecalendar.customcalendar.pager.recycler.OnCustomPagerAdapterClickListener;
+import com.example.user.bikeecalendar.filter.calendar.month.DayItem;
+import com.example.user.bikeecalendar.filter.calendar.month.MonthAdapter;
+import com.example.user.bikeecalendar.filter.calendar.month.OnMonthAdapterClickListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,16 +26,16 @@ import butterknife.OnClick;
 /**
  * Created by User on 2016-04-22.
  */
-public class CustomPagerAdapter extends PagerAdapter {
-    @Bind(R.id.view_custom_pager_year_month)
+public class CalendarPagerAdapter extends PagerAdapter {
+    @Bind(R.id.view_calendar_pager_year_month_text_view)
     TextView yearMonthTextView;
 
-    List<CustomPagerItem> list;
-    OnArrowClickListener onArrowClickListener;
-    OnCustomPagerAdapterClickListener onCustomPagerAdapterClickListener;
-    private static final String TAG = "CUSTOM_PAGER_ADAPTER";
+    private List<CalendarPagerItem> list;
+    private OnCalendarPagerAdapterClickListener onCalendarPagerAdapterClickListener;
 
-    public CustomPagerAdapter() {
+    private static final String TAG = "CALENDAR_P_ADAPTER";
+
+    public CalendarPagerAdapter() {
         list = new ArrayList<>();
     }
 
@@ -52,7 +51,7 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View view = LayoutInflater.from(container.getContext()).inflate(R.layout.view_custom_pager, null);
+        View view = LayoutInflater.from(container.getContext()).inflate(R.layout.view_calendar_pager, null);
 
         ButterKnife.bind(this, view);
 
@@ -68,16 +67,16 @@ public class CustomPagerAdapter extends PagerAdapter {
 
         recyclerView.setLayoutManager(customGridLayoutManager);
 
-        CalendarAdapter calendarAdapter = new CalendarAdapter();
-        calendarAdapter.setOnCalendarAdapterClickListener(new OnCalendarAdapterClickListener() {
+        MonthAdapter monthAdapter = new MonthAdapter();
+        monthAdapter.setOnMonthAdapterClickListener(new OnMonthAdapterClickListener() {
             @Override
-            public void onCalendarAdapterClick(View view, CalendarItem item) {
-                onCustomPagerAdapterClickListener.onCustomPagerAdapterClick(view, item);
+            public void onCalendarAdapterClick(View view, DayItem item) {
+                onCalendarPagerAdapterClickListener.onCustomPagerAdapterClick(view, item);
             }
         });
-        calendarAdapter.addAll(getCalenderItems(position));
+        monthAdapter.addAll(getCalenderItems(position));
 
-        recyclerView.setAdapter(calendarAdapter);
+        recyclerView.setAdapter(monthAdapter);
 
         container.addView(view);
 
@@ -89,33 +88,29 @@ public class CustomPagerAdapter extends PagerAdapter {
         container.removeView((View) object);
     }
 
-    public void add(CustomPagerItem item) {
-        list.add(item);
-    }
-
-    public void setOnArrowClickListener(OnArrowClickListener onArrowClickListener) {
-        this.onArrowClickListener = onArrowClickListener;
-    }
-
-    public void setOnCustomPagerAdapterClickListener(OnCustomPagerAdapterClickListener onCustomPagerAdapterClickListener) {
-        this.onCustomPagerAdapterClickListener = onCustomPagerAdapterClickListener;
-    }
-
-    @OnClick({R.id.view_custom_pager_prev_image_view,
-            R.id.view_custom_pager_next_image_view})
+    @OnClick({R.id.view_calendar_pager_prev_image_view,
+            R.id.view_calendar_pager_next_image_view})
     void onClick(View view) {
         switch (view.getId()) {
-            case R.id.view_custom_pager_prev_image_view:
-                onArrowClickListener.prev(view);
+            case R.id.view_calendar_pager_prev_image_view:
+                onCalendarPagerAdapterClickListener.prev(view);
                 break;
-            case R.id.view_custom_pager_next_image_view:
-                onArrowClickListener.next(view);
+            case R.id.view_calendar_pager_next_image_view:
+                onCalendarPagerAdapterClickListener.next(view);
                 break;
         }
     }
 
-    private List<CalendarItem> getCalenderItems(int position) {
-        List<CalendarItem> calendarItems = new ArrayList<>();
+    public void add(CalendarPagerItem item) {
+        list.add(item);
+    }
+
+    public void setOnCalendarPagerAdapterClickListener(OnCalendarPagerAdapterClickListener onCalendarPagerAdapterClickListener) {
+        this.onCalendarPagerAdapterClickListener = onCalendarPagerAdapterClickListener;
+    }
+
+    private List<DayItem> getCalenderItems(int position) {
+        List<DayItem> dayItems = new ArrayList<>();
 
         SimpleDateFormat simpleDayOfTheWeekFormat = new SimpleDateFormat("E", java.util.Locale.getDefault());
         SimpleDateFormat simpleDayFormat = new SimpleDateFormat("dd", java.util.Locale.getDefault());
@@ -210,13 +205,13 @@ public class CustomPagerAdapter extends PagerAdapter {
         }
 
         for (int i = 1; i <= beforeCount; i++)
-            calendarItems.add(i - 1, new CalendarItem(beforeEndDay - (beforeCount - i), false));
+            dayItems.add(i - 1, new DayItem(beforeEndDay - (beforeCount - i), false));
         for (int i = 1; i <= currentEndDay; i++)
-            calendarItems.add(beforeCount + (i - 1), new CalendarItem(i, true));
+            dayItems.add(beforeCount + (i - 1), new DayItem(i, true));
         for (int i = 1; i <= afterCount; i++)
-            calendarItems.add(beforeCount + currentEndDay + (i - 1), new CalendarItem(i, false));
+            dayItems.add(beforeCount + currentEndDay + (i - 1), new DayItem(i, false));
 
-        return calendarItems;
+        return dayItems;
     }
 
     private class CustomGridLayoutManager extends GridLayoutManager {

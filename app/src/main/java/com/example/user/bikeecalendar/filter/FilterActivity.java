@@ -1,4 +1,4 @@
-package com.example.user.bikeecalendar.customcalendar;
+package com.example.user.bikeecalendar.filter;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,10 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.user.bikeecalendar.R;
-import com.example.user.bikeecalendar.customcalendar.pager.CustomPagerAdapter;
-import com.example.user.bikeecalendar.customcalendar.pager.CustomPagerItem;
-import com.example.user.bikeecalendar.customcalendar.pager.OnArrowClickListener;
-import com.example.user.bikeecalendar.customcalendar.pager.recycler.CalendarItem;
-import com.example.user.bikeecalendar.customcalendar.pager.recycler.OnCustomPagerAdapterClickListener;
+import com.example.user.bikeecalendar.filter.calendar.CalendarPagerAdapter;
+import com.example.user.bikeecalendar.filter.calendar.CalendarPagerItem;
+import com.example.user.bikeecalendar.filter.calendar.month.DayItem;
+import com.example.user.bikeecalendar.filter.calendar.OnCalendarPagerAdapterClickListener;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -19,44 +18,51 @@ import java.util.Date;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CustomCalendarActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, OnArrowClickListener, OnCustomPagerAdapterClickListener {
+public class FilterActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, OnCalendarPagerAdapterClickListener {
     @Bind(R.id.view_pager)
     ViewPager viewPager;
 
-    private static final String TAG = "CUSTOM_C_ACTIVITY";
+    private CalendarPagerAdapter calendarPagerAdapter;
+    private Calendar calendar;
+    private Date beforeEndDate;
+    private Date currentStartDate;
+    private Date currentEndDate;
+    private Date afterStartDate;
+    private Date afterEndDate;
+
+    private static final String TAG = "FILTER_ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_calendar);
+        setContentView(R.layout.activity_filter);
 
         ButterKnife.bind(this);
 
-        CustomPagerAdapter customPagerAdapter = new CustomPagerAdapter();
-        customPagerAdapter.setOnArrowClickListener(this);
-        customPagerAdapter.setOnCustomPagerAdapterClickListener(this);
+        calendarPagerAdapter = new CalendarPagerAdapter();
+        calendarPagerAdapter.setOnCalendarPagerAdapterClickListener(this);
 
-        Calendar calendar = Calendar.getInstance();
+        calendar = Calendar.getInstance();
         calendar.set(Calendar.DATE, 1);
         calendar.add(Calendar.DATE, -1);
-        Date beforeEndDate = calendar.getTime();
+        beforeEndDate = calendar.getTime();
         calendar.add(Calendar.DATE, 1);
-        Date currentStartDate = calendar.getTime();
+        currentStartDate = calendar.getTime();
         calendar.add(Calendar.MONTH, 1);
         calendar.add(Calendar.DATE, -1);
-        Date currentEndDate = calendar.getTime();
+        currentEndDate = calendar.getTime();
         calendar.add(Calendar.DATE, 1);
-        Date afterStartDate = calendar.getTime();
+        afterStartDate = calendar.getTime();
         calendar.add(Calendar.MONTH, 1);
         calendar.add(Calendar.DATE, -1);
-        Date afterEndDate = calendar.getTime();
+        afterEndDate = calendar.getTime();
         Log.d(TAG, "beforeEndDate : " + beforeEndDate
                 + "\ncurrentStartDate : " + currentStartDate
                 + "\ncurrentEndDate : " + currentEndDate
                 + "\nafterStartDate : " + afterStartDate
                 + "\nafterEndDate : " + afterEndDate);
         for (int i = 0; i <= 12; i++) {
-            customPagerAdapter.add(new CustomPagerItem(beforeEndDate, currentStartDate, currentEndDate, afterStartDate));
+            calendarPagerAdapter.add(new CalendarPagerItem(beforeEndDate, currentStartDate, currentEndDate, afterStartDate));
 
             beforeEndDate = currentEndDate;
             currentStartDate = afterStartDate;
@@ -73,7 +79,7 @@ public class CustomCalendarActivity extends AppCompatActivity implements ViewPag
                     + "\nafterEndDate : " + afterEndDate);
         }
 
-        viewPager.setAdapter(customPagerAdapter);
+        viewPager.setAdapter(calendarPagerAdapter);
         viewPager.addOnPageChangeListener(this);
     }
 
@@ -107,7 +113,7 @@ public class CustomCalendarActivity extends AppCompatActivity implements ViewPag
     }
 
     @Override
-    public void onCustomPagerAdapterClick(View view, CalendarItem item) {
-        Log.d(TAG, "dd : " + item.getDd());
+    public void onCustomPagerAdapterClick(View view, DayItem item) {
+        Log.d(TAG, "day : " + item.getDay());
     }
 }

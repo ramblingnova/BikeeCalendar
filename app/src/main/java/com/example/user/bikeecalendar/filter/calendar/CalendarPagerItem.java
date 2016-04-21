@@ -1,4 +1,4 @@
-package com.example.user.bikeecalendar.customcalendar.pager;
+package com.example.user.bikeecalendar.filter.calendar;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import lombok.Setter;
 /**
  * Created by User on 2016-04-22.
  */
-public class CustomPagerItem {
+public class CalendarPagerItem {
     @Getter
     @Setter(AccessLevel.PUBLIC)
     Date beforeEndDate;
@@ -23,7 +23,7 @@ public class CustomPagerItem {
     @Setter(AccessLevel.PUBLIC)
     Date afterStartDate;
 
-    public CustomPagerItem(Date beforeEndDate, Date currentStartDate, Date currentEndDate, Date afterStartDate) {
+    public CalendarPagerItem(Date beforeEndDate, Date currentStartDate, Date currentEndDate, Date afterStartDate) {
         this.beforeEndDate = beforeEndDate;
         this.currentStartDate = currentStartDate;
         this.currentEndDate = currentEndDate;
