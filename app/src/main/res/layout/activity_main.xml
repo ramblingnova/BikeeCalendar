@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.bikeecalendar.MainActivity">
+
+    <Button
+        android:id="@+id/activity_main_animated_calendar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animated Calendar" />
+
+    <Button
+        android:id="@+id/activity_main_popup_calendar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_main_animated_calendar_button"
+        android:text="Popup Calendar" />
+
+    <Button
+        android:id="@+id/activity_main_custom_calendar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_main_popup_calendar_button"
+        android:text="Custom Calendar" />
+</RelativeLayout>
