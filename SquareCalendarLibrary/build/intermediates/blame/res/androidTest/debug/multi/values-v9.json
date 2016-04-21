@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v9\\values-v9.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\build\\intermediates\\bundles\\debug\\res\\values-v9\\values-v9.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 55,
+                        "endOffset": 106
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v9\\values-v9.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\build\\intermediates\\bundles\\debug\\res\\values-v9\\values-v9.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 55,
+                        "endOffset": 106
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\build\\intermediates\\res\\merged\\release\\values-ja\\values-ja.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 65,
+                    "endOffset": 116
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\src\\main\\res\\values-ja\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 2,
+                        "startOffset": 95,
+                        "endColumn": 63,
+                        "endOffset": 156
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\build\\intermediates\\res\\merged\\release\\values-ja\\values-ja.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 65,
+                    "endOffset": 116
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\src\\main\\res\\values-ja\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 2,
+                        "startOffset": 95,
+                        "endColumn": 63,
+                        "endOffset": 156
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\build\\intermediates\\res\\merged\\release\\values-ko-rKR\\values-ko-rKR.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 47,
+                    "endOffset": 98
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\src\\main\\res\\values-ko-rKR\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 47,
+                        "endOffset": 100
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 103,
+                    "endColumn": 76,
+                    "endOffset": 175
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\src\\main\\res\\values-ko-rKR\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 106,
+                        "endColumn": 76,
+                        "endOffset": 178
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 180,
+                    "endColumn": 53,
+                    "endOffset": 229
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalendarLibrary\\src\\main\\res\\values-ko-rKR\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 184,
+                        "endColumn": 53,
+                        "endOffset": 233
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\build\\intermediates\\res\\merged\\release\\values-ko-rKR\\values-ko-rKR.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 47,
+                    "endOffset": 98
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\src\\main\\res\\values-ko-rKR\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 47,
+                        "endOffset": 100
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 103,
+                    "endColumn": 76,
+                    "endOffset": 175
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\src\\main\\res\\values-ko-rKR\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 106,
+                        "endColumn": 76,
+                        "endOffset": 178
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 180,
+                    "endColumn": 53,
+                    "endOffset": 229
+                },
+                "from": {
+                    "file": "C:\\Users\\User\\AndroidStudioProjects\\BikeeCalendar\\SquareCalenderLibrary\\src\\main\\res\\values-ko-rKR\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 184,
+                        "endColumn": 53,
+                        "endOffset": 233
+                    }
+                }
+            }
+        ]
+    }
+]
